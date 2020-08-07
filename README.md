@@ -1,5 +1,5 @@
 # My Portfolio
-## I created a website for my own portfolio which you can access through <a href='https://mydigitalprofile.herokuapp.com'>this link</a>.
+I created a website for my own portfolio which you can access through <a href='https://mydigitalprofile.herokuapp.com'>My Portfolio</a>, as i did'nt bought a domain name yet.
 
 ## Deployment Configurations
 ### Procfile
