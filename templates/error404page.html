@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'landing_page/css/bootstrap.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Woops!</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to right, rgb(37, 228, 196) , rgb(82, 42, 177));
+        /* background-image: linear-gradient(rgb(117, 224, 67), rgb(15, 231, 247)); */
+
+    }
+</style>
+<body>
+
+    <div class="container" style="height: 700px;">
+
+        
+        <div class="row" style="height: auto; border: 0px solid green;">
+            <div class="col" style="width: auto; border: 0px solid red;">
+                <div class="container" style="border: 0px solid; margin-top: 100px; padding-bottom: 10px;">
+                    <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-size: calc(25px + 4vw);">Oops ! 😮</h1>
+                </div>
+
+                <div class="container" style="border: 0px solid;">
+                    <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-size: calc(15px + 2vw);">
+                    I don't think I coded for what you are trying to access here.
+                    </h1>
+                </div>
+
+                <div class="container" style="border: 0px solid; padding: 30px 30px 30px 30px ;">
+                    <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-weight: bold; font-size: calc(12px + 1.5vw);">
+                    Anyway, Lets head back to home.
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <a href="{%url  'Home-Landing'%}" class="btn btn-success" style="align-items: center; border-radius: 20px; margin-left: 10px; margin-right: 10px;">Home</a>
+        </div>
+
+        <div class="row justify-content-center" style="margin-top:50px;">
+            <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white;  font-size: calc(11px + 1vw);">
+                By the way, It's a 404, Page Not Found !
+                </h1>
+        </div>
+    </div>
+    
+</body>
+</html>

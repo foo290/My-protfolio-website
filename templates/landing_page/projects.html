@@ -1,0 +1,136 @@
+{% extends "landing_page/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<style>
+
+    body { 
+    background-image: url("{% static 'landing_page/img/projects_cvr/projects.jpg' %}");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    }
+
+    .my-thumbnail {
+        height: 120px;
+        width: 120px;
+        background-color: white;
+    }
+
+    .true-transparent {
+        background-color: rgba(0,0,0, 0.7);
+        width: auto;
+        height: 500px;
+    }
+
+    .true-transparent-heading {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    /* justify-content: center; */
+    font-size:calc(20px + 3vw);
+    position: relative;
+  }
+
+    .true-transparent-subheading {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    font-size:calc(18px + .5vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+
+
+  .my-btn-sm { 
+            width: 30px; 
+            height: 30px; 
+            padding: 6px 0px; 
+            border-radius: 15px; 
+            font-size: 8px; 
+            text-align: center;
+            background-color: white;
+            }
+    .google-fonts {
+        font-family: 'Mulish', sans-serif;
+    }
+
+</style>
+<div class="true-transparent">
+    <div class="container" style="border: 0px solid red; padding-top: 200px;">
+        <h1 class="true-transparent-heading" style="text-align: center;">{{cover.cover_name}}</h1>
+
+    </div>
+
+    <div class="container " style="margin-top: 230px; border: 0px solid white;">
+        <div class="row justify-content-center">
+            <!-- <i class="fa fa-chevron-circle-down" aria-hidden="true" style="font-size: 60px; color: white;"></i> -->
+        </div>
+    </div>
+
+</div>
+
+<div style="background-color: white; width: auto; height: auto; padding-bottom: 50px; padding-top: 50px; border: 0px solid green;">
+
+    <div class="container" style="border: 0px solid red;">
+        <h1 class="true-transparent-heading" style="color: black;">{{cover.page_heading}}</h1> <hr>
+    </div>
+
+    <div class="container" style="border: 0px solid blue;">
+
+        <span class="true-transparent-subheading" style="color: black; border: 0px solid green;">
+            {{cover.page_subheading}}
+        </span>
+
+    </div>
+
+    <div class="container" style="height: auto; margin-top: 30px; border: 0px solid black;">
+        <div class="row">
+            <div class="col">
+                {%for project in projects%}
+
+                    <div class="jumbotron " style="padding-top: 20px; padding-bottom: 20px; border-radius: 20px;">
+                        <div class="row justify-content-center" style="border: 0px solid blue;">
+                            <div class="col-xs-8 col-xl-8 col-md-8 col-sm-12"  style="border: 0px solid red;">
+                                <span style="padding-left: 20px;">
+                                    <h2 class="google-fonts" style="font-weight: bold;">{{project.project_title}}</h2> <hr>
+                                    <p>
+                                        {{project.project_summary}}
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row" style="border: 0px solid red;">
+                            <div class="col" style="border: 0px solid blue;">
+                                <div class="row justify-content-end">
+
+                                    <a href="{%url  'My-Projects'%}" class="btn btn-dark" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Take a look</a>
+
+                                    <a href="{%url  'My-Projects'%}" class="btn btn-primary" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Take a look</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            
+            
+            
+            
+            
+            </div>
+        </div>        
+    </div>    
+</div>
+
+{% endblock content %}
+

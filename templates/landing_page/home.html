@@ -1,0 +1,338 @@
+{% extends "landing_page/base.html" %} 
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+
+
+  .my-card {
+    width: auto;
+    margin: 10px 10px 10px 10px;
+  }
+
+  .dp-class {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px 10px 10px 10px;
+  }
+
+  .intro-title {
+    font-size: 25px;
+    font-family: 'Mulish' sans-serif;
+  }
+  
+  .intro-subtitle {
+    font-size: large;
+    margin-top: 10px 10px 10px 10px;
+    font-family: 'Mulish' sans-serif;
+  }
+
+  .intro-body-text {
+    font-size: medium;
+    margin-top: 10px;
+    /* margin-left: 20px; */
+    font-family: 'Mulish' sans-serif;
+  }
+
+  .dp-intro-title {
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+
+  }
+
+  .username-text {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+  }
+  .dp-intro-subtitle {
+    font-size: medium;
+    margin-top: 10px;
+    font-family: 'Mulish' sans-serif;
+  }
+
+  .central-heading-title {
+    font-size: 25px;
+    /* margin: 10px 10px 10px 10px; */
+    font-family: 'Mulish' sans-serif;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .newsec {
+    margin: 20px 0px 20px 0px ;
+    width: auto;
+  }
+
+
+  .true-transparent{
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px 20px 20px 20px ;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+  }
+
+  .true-transparent-heading {
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    /* justify-content: center; */
+    font-size:calc(20px + 1vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .true-transparent-subheading {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: center;
+    font-size:calc(18px + .5vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .true-transparent-content {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    justify-content: center;
+    font-size:calc(15px + .4vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .skills-fonts-heading {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .skills-fonts-items {
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  body { 
+  background-image: url("{% static 'landing_page/img/home_bg/bodybg.jpg' %}");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  }
+
+  .card-shadow-effect {
+    box-shadow: 1px 5px 50px 8px #ecebeb;
+  }
+
+  .partial-transparent {
+    background-color: rgba(255,255,255, 0.95); 
+    width: auto; height: auto; 
+    
+    padding-bottom: 50px;
+    border: 0px solid  blueviolet;
+
+  }
+
+  .cards-font {
+    font-family: 'Mulish', sans-serif; font-weight: bold;
+  }
+
+
+  
+
+</style>
+
+<!-- Front section INTRO -->
+<div style="background-color: white; width: auto; height: auto; padding-bottom: 50px; padding-top: 100px; border: 0px solid;">
+  <div class="container" style="border: 0px solid red;">
+
+      <!-- DP and Intro Section -->
+      <div class="row" style="border: 0px solid blue; ">
+
+        <div class="col-sm-12 col-lg-3 col-md-4 col-xs-12 col-xl-3" style="border: 0px solid;">
+          <img src="{%static 'landing_page/img/profile_pics/dp.jpg'%}" alt="img-responsive" class="rounded-circle dp-class" style="border: 0px solid violet;">
+        </div>
+
+
+        <div class="col-sm-12 col-lg-9 col-md-12 col-xs-12 col-xl-9" style="border: 0px solid green;">
+          <h1 class="dp-intro-title">{{context.name}}</h1>
+          <p class="username-text">{{context.fancy_name}}</p>
+          <p class="dp-intro-subtitle">{{context.bio}} </p>
+
+          <div class="row" style="border: 0px solid red;">
+            <div class="col" style="border: 0px solid blueviolet;">
+              <h1 class="dp-intro-title" style="font-size: 15px; margin: 0px 0px 0px 0px ;">{{context.status}}</h1>
+
+            </div>
+          </div>
+
+          <div class="row justify-content" style="border: 0px solid red; margin-top: 50px;">
+            <div class="col-xl-3 col-md-6 col-sm-8 col-lg-6 col-xs-12" style="border: 0px solid rgb(235, 107, 22); padding: 10px 10px 10px 10px ;">
+              <i class="fa fa-map-marker" aria-hidden="true" style="color:rgb(221, 71, 71); font-size: 20px;"></i>
+              <span style="padding-left: 30px; padding-right: 10px;">{{context.location}}</span>
+              
+
+
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-8 col-lg-6 col-xs-12" style="border: 0px solid yellow; padding: 10px 10px 10px 10px ;">
+              <a href="{{context.twitter}}" style="text-decoration: none;">
+                <i class="fa fa-twitter" aria-hidden="true" style="color: rgb(5, 131, 235); font-size: 20px;"></i>
+                <span style="padding-left: 20px; padding-right: 10px; color: black;">Twitter</span>
+              </a>
+
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-8 col-lg-6 col-xs-12" style="border: 0px solid yellow; padding: 10px 10px 10px 10px ;">
+              <a href="{{context.github}}" style="text-decoration: none;">
+              <i class="fa fa-github" aria-hidden="true" style="color: black; font-size: 20px;"></i>
+              <span style="padding-left: 20px; padding-right: 10px; color: black;">Github</span>
+              </a>
+
+
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-8 col-lg-6 col-xs-12" style="border: 0px solid yellow; padding: 10px 10px 10px 10px ;">
+              <a href="{{context.discord}}" style="text-decoration: none;">
+                <i class="fab fa-discord" style="color: rgb(115, 108, 128); font-size: 20px;"></i>
+                <span style="padding-left: 20px; padding-right: 10px; color: black;">Discord</span>
+              </a>
+
+
+            </div>
+
+
+          </div>
+  
+        </div>
+
+      </div>
+    
+
+
+  </div>
+  
+</div>
+
+<!-- Cards -->
+<div class="partial-transparent">
+
+  <!-- cards Link Section  HEADING -->
+  <div class="card">
+    <div class="card-body" style="padding: 10px 10px 10px 10px ;">
+      <h1 class="central-heading-title">Explore</h1>
+    </div>
+  </div>
+
+  <!-- cards Link Section  CARDS -->
+  <div class="container" style="margin-top: 30px;">
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" style="padding: 5px 5px 5px 5px ;">
+      <div class="row">
+
+        {%for c in cards%}
+          <div class="card card-shadow-effect" style="width: 21rem; margin: 10px 10px 10px 10px ;">
+            <div class="card-body">
+              <h5 class="card-title cards-font" >{{c.heading}}</h5> <hr>
+
+              <div style="border: 0px solid; height: 80px;">
+                <p class="card-text">{{c.Summary}}</p>
+              </div>
+              
+              <a href="{{c.link}}" class="btn btn-success" style="border-radius: 25px;">Take a look</a>
+            </div>
+          </div>
+        {%endfor%}
+
+        
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Current working projects info (New container) TRANSPARENT-sec -->
+<div style="width: auto;" class="true-transparent">
+  <div class="container">
+    <div class="col">
+      <h1 class="true-transparent-heading" >{{context.recent_project_title}}</h1><hr style="background-color: white; color: white;">
+      <h1 class="true-transparent-subheading" >{{context.recent_project_sub_title}}</h1>
+      <div class="true-transparent-content" style="margin-top: 50px; text-align: center;">
+        {{context.recent_project_summary}}
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- skills section -->
+
+<div style="width: auto; height: auto; background-color: white; padding-bottom: 50px; padding-top: 10px;">
+  <div class="card">
+    <div class="card-body" style="padding: 10px 10px 10px 10px ;">
+      <h1 class="central-heading-title">Skills Set</h1>
+    </div>
+  </div>
+
+  
+
+  <div class="container" >
+    <div class="row">
+      {% for skill in skill_set %}
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" style="margin: 50px 0px 5px 0px ; ">
+            <h1 class="skills-fonts-heading"> {{skill.title}}</h1> <hr style="background-color: rgb(158, 158, 158);">
+
+            <p >
+              <ul class="skills-fonts-items">
+                {% for item in skill.items %}
+                  <li>
+                    {{item}}
+                  </li>
+                {%endfor%}
+              </ul>
+            </p>
+
+          </div>
+      {%endfor%}
+
+      
+     
+
+    
+    </div>
+  
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+  
+
+
+{% endblock content %}
