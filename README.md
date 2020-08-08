@@ -3,7 +3,9 @@ I created a website for my own portfolio which you can access through <a href='h
 
 ## Deployment Configurations
 ### Procfile
-```web: gunicorn Main_site_project.wsgi```
+```
+web: gunicorn Main_site_project.wsgi
+```
 
 ### Requirements
 ```
