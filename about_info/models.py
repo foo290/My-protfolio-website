@@ -7,7 +7,6 @@ class AboutMe(models.Model):
     user = models.ManyToManyField(User)
 
     cover_name = models.CharField(max_length=50)
-    cover_image = models.ImageField(default='default.jpg', upload_to='about_cvr')
 
     micro_greeting_1 = models.CharField(max_length=50, blank=True,null=True)
     micro_greeting_2 = models.CharField(max_length=50, blank=True,null=True)
@@ -19,4 +18,3 @@ class AboutMe(models.Model):
 
     def __str__(self):
         return self.cover_name
-

@@ -59,5 +59,7 @@ def error404(request,exception):
 
 
 
+def admin404(request):
+    return render(request, 'landing_page/admin404.html')
 
 

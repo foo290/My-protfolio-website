@@ -1,5 +1,5 @@
 Main_site_project/__pycache__/*.pyc
 *.pyc
-.vs/My-protfolio-website/v16/.suo
-.vs/slnx.sqlite
-.vs/VSWorkspaceState.json
+db.sqlite3
+/.vs
+
