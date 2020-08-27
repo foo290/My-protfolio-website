@@ -16,7 +16,7 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     }
 
     .my-thumbnail {
@@ -113,9 +113,9 @@
                             <div class="col" style="border: 0px solid blue;">
                                 <div class="row justify-content-end">
 
-                                    <a href="{%url  'My-Projects'%}" class="btn btn-dark" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Take a look</a>
+                                    <a href="{{project.github_link}}" class="btn btn-dark" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Git Repo</a>
 
-                                    <a href="{%url  'My-Projects'%}" class="btn btn-primary" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Take a look</a>
+                                    <a href="{{project.post_link}}" class="btn btn-primary" style="border-radius: 20px; margin-left: 10px; margin-right: 10px;">Take a look</a>
 
                                 </div>
                             </div>

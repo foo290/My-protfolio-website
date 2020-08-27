@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  os.environ.get('DEBUG')
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+# DEBUG = False
 
 ALLOWED_HOSTS = ['mydigitalprofile.herokuapp.com','127.0.0.1']
 
@@ -89,6 +89,11 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+
+db_from_url = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_url)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -128,9 +133,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-# MEDIA_URL = '/media/'
-
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -138,5 +140,3 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-
-# django_heroku.settings(locals())
