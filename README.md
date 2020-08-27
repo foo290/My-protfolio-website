@@ -28,7 +28,7 @@ settings.py
 ```
 
 ## Tech Used
-The website is based on **Django** for backend and **bootstrap, fontawesome and google fonts** for frontend.
+The website is based on **Django and firebase** for backend and **bootstrap, fontawesome and google fonts** for frontend.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
