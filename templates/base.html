@@ -1,0 +1,248 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    <!-- Address bar colors -->
+    <meta name="theme-color" content="#000000" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'landing_page/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'landing_page/css/base_css.css' %}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+      Nitin Sharma
+    </title>
+    <link rel="icon" href="{% static 'landing_page/icons/ic.jpg' %}" type="image/icon type">
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #skills {
+        height: auto;
+      }
+
+      #header {
+        background-image: url("{% static 'landing_page/icons/1.png' %}");
+
+        height: 700px;
+
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+    </style>
+
+</head>
+
+<style>
+  
+  ::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  }
+  ::-webkit-scrollbar-track-piece  {
+  background-color: #000000;
+  }
+  ::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: rgb(34, 33, 33);
+  }
+
+</style>
+
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top " style="background-color: rgb(34, 33, 33);">
+
+      <a class="navbar-brand" href="{%url  'Home-Landing'%}">
+        <img src="{% static 'landing_page/icons/ic.jpg' %}" style="border-radius: 5px;" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      </a>
+
+      <a class="navbar-brand" href="{%url  'Home-Landing'%}">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'My-Projects'%}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'About-Me'%}" tabindex="-1" aria-disabled="true">About Me</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Create-Project' %}">Create Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#skills" tabindex="-1" aria-disabled="true">Skills</a>
+            </li>
+
+          </ul>
+          
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'My-Projects'%}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'About-Me'%}" tabindex="-1" aria-disabled="true">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills" tabindex="-1" aria-disabled="true">Skills</a>
+          </li>
+         
+
+          {% endif %}
+        </ul>
+
+      </div>
+    </nav>
+
+    
+
+  </nav>
+
+  <div>
+    {%block content%}{%endblock%}
+  </div>
+
+
+
+  <div class="my-footer" style=" background-color: rgb(34, 33, 33);" >
+    <div style="margin-top: 50px;">
+
+    </div>
+    <div class="col">
+      <div class="container-fluid" style="border: 0px solid white; padding-bottom: 50px;" >
+
+        <div class="row justify-content-center">
+
+          <div class="col-12" >
+            <h1 class="default-font-style" style="font-size:calc(15px + 1vw); text-align: center;">
+              Powered by : Django and Bootstrap
+            </h1>
+          </div>
+
+        </div>
+        <div class="row justify-content-center" style="margin-top: 20px;">
+          <h1 class="default-font-style" style="text-align: center; font-size:calc(12px + 0.5vw);">
+            Crafted with ❤ by <b>foo</b> 😉
+          </h1>
+        </div>
+
+
+
+        <!-- ICONS area starts here -->
+        
+      
+
+      </div>
+
+
+    </div>
+
+    <div class="container" style="border: 0px solid white; margin-top: 20px;">
+
+      <div class="row justify-content-center" style="margin-top: 20px;">
+        <h1 class="default-font-style" style="text-align: center; font-size:calc(12px + 0.5vw);">
+          <!-- <b>Tech Used : </b><br> <br> -->
+            <b>Nitin Sharma@foo {% now "Y" %}</b>  <br> <br>
+          <span style="font-size:calc(12px + 0.3vw);">
+            Python | Django | Bootstrap | Google Authenticator | Google Cloud Platform | Google firebase | Heroku | CK Editor | WhiteNoise
+
+          </span>
+        </h1> 
+        
+
+
+
+      </div>
+
+      <hr style="color: white; background-color: white;">
+
+      <div class="row justify-content-around" style=" margin-top:0px; margin-bottom: 10px;">
+
+        <div class="col-1" style="text-align: center;">
+          <a href="{{context.linkdin}}">
+          <i class="fa fa-linkedin-square icon-configs" aria-hidden="true" ></i>
+          </a>
+        </div>
+
+        <div class="col-1" style="text-align: center;">
+          <a href="{{context.github}}">
+          <i class="fa fa-github icon-configs" aria-hidden="true" ></i>
+          </a>
+        </div>
+
+        <div class="col-1" style="text-align: center;">
+          <a href="{{context.twitter}}">
+          <i class="fa fa-twitter-square icon-configs" aria-hidden="true" ></i>
+          </a>
+
+        </div>
+
+        <div class="col-1" style="text-align: center;">
+          <a href="#">
+          <i class="fa fa-envelope icon-configs" aria-hidden="true" ></i>
+          </a>
+
+        </div>
+
+        <div class="col-1" style="text-align: center;">
+          <a href="#">
+            <i class="fab fa-discord icon-configs"></i>
+          </a>
+
+        </div>
+
+    </div>
+
+
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="{% static 'landing_page/js/bootstrap.js' %}"></script>
+</body>
+</html>

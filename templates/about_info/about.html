@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<body style="background-image: url('{{about.cover_image.url}}');   background-position: center;   height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;">
+<div class="true-transparent-about" style="padding-top: 150px;">
+    <div class="container" style="border: 0px solid red; margin-top: 0px;">
+
+      {%if user.is_authenticated%}
+        <div class="row justify-content-end" style="border: 0px solid;">
+          <a href='{% url "Edit-About" about.id %}' class="btn btn-success">Edit</a>
+        </div>
+      {%endif%}  
+
+      <h1 class="true-transparent-heading-about" style="text-align: center; margin-top: 30px;">{{about.cover_name}}</h1>
+      
+        <p class="true-transparent-subheading-about">
+          <span>
+            {% if about.micro_greeting_1%}
+            {{about.micro_greeting_1}} 
+            {%endif%}
+          </span>
+          <br>
+          <span>
+            {%if about.micro_greeting_2%}
+              {{about.micro_greeting_2}}
+            {%endif%}
+          </span>
+          <br>
+          <span>
+            {%if about.short_intro%}
+              {{about.short_intro}}
+            {%endif%}
+          </span>
+        
+        </p>
+     
+    </div>
+
+
+</div>
+
+<div style="border-radius:15px; background-image: linear-gradient(to right,  rgb(58, 58, 58),rgb(10, 10, 10)); width: auto; height: auto; padding-bottom: 50px; padding-top: 50px; border: 2px solid rgb(241, 226, 2);">
+
+    <div class="container" style="border: 0px solid red;">
+      {%if user.is_authenticated%}
+        <div class="row justify-content-end" style="border: 0px solid;">
+          <a href='{% url "Edit-About-Bio" about.id %}' class="btn btn-success">Edit</a>
+        </div>
+      {%endif%}  
+        
+        <h1 class="true-transparent-heading-about" style="color:white;">{{about.greeting_heading}}</h1> <hr style="background-color: white;">
+    </div>
+
+    <div class="container" style="border: 0px solid rgb(241, 226, 2); padding-left: 20px; padding-right:20px; border-radius:10px">
+
+        <section class="true-transparent-subheading-about" style="color: white;">
+          {%if about.greeting_subheading%}
+            {{about.greeting_subheading}}
+          {%endif%}
+        </section>
+
+        <section style="line-height: 35px;font-family: 'Mulish', sans-serif; color:white; margin-top:20px;">
+        {{about.self_intro | safe}}
+        </section>
+
+        {%if about.fairwell_words%}
+          <section style="line-height: 25px;font-family: 'Mulish', sans-serif; color:white;">
+            {{about.fairwell_words | safe}}
+          </section>
+        {%endif%}  
+
+    </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<body style="background-image: url('{{cover.cover_image.url}}');   background-position: center;   height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;">
+<div class="true-transparent-projects">
+    <div class="container" style="border: 0px solid red; padding-top: 200px;">
+        
+        {%if user.is_authenticated%}
+            <div class="row justify-content-end" style="border: 0px solid;">
+            <a href='{% url "Edit-Projects-Heading" cover.id %}' class="btn btn-success">Edit</a>
+            </div>
+        {%endif%}  
+        
+        <h1 class="true-transparent-heading-projects" style="text-align: center;">{{cover.cover_name}}</h1>
+        <h3 class="true-transparent-heading-projects" style="text-align: center;font-size:calc(18px + 1.5vw); margin-top: 20px;">
+        {% if cover.cover_subname %}
+            {{cover.cover_subname}}
+        {% endif %}
+        </h3>
+
+    </div>
+
+    <div class="container " style="margin-top: 230px; border: 0px solid white;">
+        <div class="row justify-content-center">
+            <!-- <i class="fa fa-chevron-circle-down" aria-hidden="true" style="font-size: 60px; color: white;"></i> -->
+        </div>
+    </div>
+
+</div>
+
+<div style="background-image: linear-gradient(to right,  rgb(58, 58, 58),rgb(10, 10, 10)); width: auto; height: auto; padding-bottom: 50px; padding-top: 50px; border: 0px solid green;">
+
+    <div class="container" style="border: 0px solid red;">
+    
+        <h1 class="true-transparent-heading-projects" style="color: white;">{{cover.page_heading}}</h1> <hr style="background-color:white;">
+    </div>
+
+    <div class="container" style="border: 0px solid blue;">
+
+        <span class="true-transparent-subheading-projects" style="color: white; border: 0px solid green;">
+            {{cover.page_subheading}}
+        </span>
+
+    </div>
+
+    <div class="container" style="height: auto; margin-top: 30px; border: 0px solid black;">
+        <div class="row">
+            <div class="col">
+                {%for project in projects%}
+
+                    <div class="jumbotron " style="background-color: rgb(34, 33, 33); padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px; border-radius: 15px;border: 2px solid rgb(241, 229, 119);">
+                        <div class="row justify-content-center" style="border: 0px solid blue; padding-left: 10px;">
+
+                            <div class="col-xs-12 col-xl-2 col-md-2 col-sm-3" style="margin-left: 0px; padding-left: 0px; margin-top: 10px; border: 0px solid green;">
+                                <div class="row justify-content-center" style="border: 0px solid lawngreen; margin-top: 30px;">
+                                    <img src="{{project.thumbnail.url}}" class="my-thumbnail" style="background-color: rgb(34, 33, 33); border-radius: 8px;" alt="Img">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-8 col-xl-8 col-md-8 col-sm-12"  style="border: 0px solid red;">
+                                <span style="padding-left: 20px;">
+                                    <h2 class="default-font-style" style="color: white; font-weight: bold;">{{project.project_title}}</h2>
+                                    <hr style="background-color:rgb(241, 229, 119);">
+                                    <p style="color: white;">
+                                        {{project.project_summary}}
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center" style="border: 0px solid red;">
+                                
+                                    {% if user.is_authenticated %}
+                                    <div class="col col-xs-12 col-md-4 col-xl-4 col-lg-4" style="border: 0px solid blue;">
+                                        <a href="{% url 'Project-Delete' project.id %}" class="btn btn-danger" style="margin: 10px 10px 10px 10px ;">Delete</a>
+
+                                        <a href="{%url 'Edit-Projects-Card' project.id%}" class="btn btn-success" style="margin: 10px 10px 10px 10px ;">Update</a>
+
+                                    </div>
+
+                                    <div class="col col-xs-12 col-md-4 col-xl-4 col-lg-4" style="border: 0px solid blue;">
+                                        <a href="{{project.github_link}}" class="btn btn-dark" style="margin: 10px 10px 10px 10px ;">Git Repo</a>
+
+                                        <a href="{% url 'Projects-Detail' project.id %}" class="btn btn-primary" style="margin: 10px 10px 10px 10px ;"> Details </a>
+                                    </div>
+                                        
+
+                                       
+                                    {% else %}
+                                        <a href="{{project.github_link}}" class="btn btn-dark" style="margin: 10px 10px 10px 10px ;">Git Repo</a>
+
+                                        <a href="{% url 'Projects-Detail' project.id %}" class="btn btn-primary" style="margin: 10px 10px 10px 10px ;">Details</a>
+                                    {% endif %}
+
+                                
+                        
+                        </div>
+                    </div>
+                {%endfor%}
+            
+            
+            
+            
+            
+            </div>
+        </div>        
+    </div>    
+</div>
+
+{% endblock content %}
+

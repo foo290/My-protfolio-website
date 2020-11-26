@@ -1,0 +1,211 @@
+/* This file contains custom css for various elements */
+
+.default-font-style {
+    /* Used as default fonts */
+    font-family: 'Mulish', sans-serif;
+    color: white;
+  }
+
+
+.icon-configs {
+    /* For forntawesome default size and color */
+    font-size: 20px;
+    color: white;
+  }
+
+
+.my-footer {
+    /* Base footer of the website */
+    background-color: white;
+    color: black;
+    height: auto;
+    width: auto;
+    padding: 10px 10px 10px 10px ;
+    height: auto;
+  }
+
+.dp-class {
+    /* Profile Pic Dimensions */
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 0px 0px 0px 0px;
+  }
+
+
+.my-title {
+    /* Main title configs  */
+    margin-top: 20px;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    font-size:calc(25px + 2vw);
+  }
+
+.my-subtitle {
+    /* Main subtitle configs  */
+    font-size: medium;
+    margin-top: 10px;
+    font-family: 'Mulish' sans-serif;
+    color: white;
+  }
+
+
+.username-text {
+    /* Fonts particularly used for Usernames */
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    color: white;
+  }
+
+
+.central-heading-title {
+    /* Fonts used for Main Headings */
+    font-size: 25px;
+    font-family: 'Mulish' sans-serif;
+    text-align: center;
+    justify-content: center;
+  }
+
+.true-transparent-home{
+    /* Used on divs for transparent effect */
+    background-color: rgba(0, 0, 0, .5); 
+    padding: 20px 20px 20px 20px ;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+.true-transparent-heading-home {
+    /* Configs used on transparent backgrounds */
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    /* justify-content: center; */
+    font-size:calc(20px + 1vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+.true-transparent-subheading-home {
+    /* Configs used on transparent backgrounds */
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: center;
+    font-size:calc(18px + .5vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+.true-transparent-content-home {
+    /* Configs used on transparent backgrounds */
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    justify-content: center;
+    font-size:calc(15px + .4vw);
+    position: relative;
+    margin-top: 30px;
+  }
+
+
+.skills-fonts-heading {
+    /* Configs used at Skills section */
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.skills-fonts-items {
+    /* Configs used at Skills section */
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+
+
+/* Cards Section ------------------------------------------------------------------------------------------------------------------ */
+
+.cards-sec {
+    width: auto; height: auto; 
+    padding-bottom: 50px;
+    border: 0px solid  blueviolet;
+    /* background-image: linear-gradient(to right,  rgb(58, 58, 58),rgb(10, 10, 10)); */
+    background-color: black;
+  }
+
+  
+.cards-font {
+    font-family: 'Mulish', sans-serif; font-weight: bold;
+    color: white;
+  }
+
+
+.card-shadow-effect {
+    box-shadow: 1px 5px 50px 8px #222222;
+  }
+
+
+
+
+/* About Section ------------------------------------------------------------------------------------------------------------------ */
+
+.true-transparent-about {
+    background-color: rgba(0,0,0, .6);
+    width: auto;
+    height: 510px;
+}
+
+.true-transparent-heading-about {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    /* justify-content: center; */
+    font-size:calc(20px + 3vw);
+    position: relative;
+}
+
+.true-transparent-subheading-about {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    font-size:calc(18px + .5vw);
+    position: relative;
+    margin-top: 30px;
+}
+
+
+
+/* Projects Section ------------------------------------------------------------------------------------------------------------------ */
+
+.my-thumbnail {
+    height: 120px;
+    width: 120px;
+    background-color: white;
+}
+
+.true-transparent-projects {
+    background-color: rgba(0,0,0, 0.5);
+    width: auto;
+    height: 500px;
+}
+
+.true-transparent-heading-projects {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    font-size:calc(20px + 3vw);
+    position: relative;
+}
+
+.true-transparent-subheading-projects {
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    text-align: start;
+    font-size:calc(18px + .5vw);
+    position: relative;
+    margin-top: 30px;
+}
+

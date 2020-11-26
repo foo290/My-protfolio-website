@@ -1,5 +1,6 @@
 from django.contrib import admin
+from .models import P_Post
 
 # Register your models here.
-from .models import Nav_cards
-admin.site.register(Nav_cards)
+
+admin.site.register(P_Post)

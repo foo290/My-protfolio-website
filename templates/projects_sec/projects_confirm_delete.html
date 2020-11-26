@@ -1,0 +1,45 @@
+{% extends 'base_edit_area.html' %}
+
+{% block editArea %}
+
+
+{% if user.is_authenticated %}
+
+ 
+<form method='POST'>
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-5" style="text-align: center;">
+           {{legend}}
+        </legend>
+
+    </fieldset>
+    
+    <hr>
+
+    <h3>Are you sure you want to delete the project card :" {{object.project_title}} "</h3>
+
+    <div class="row justify-content-end">
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">
+                Yes, Delete!  
+            </button>
+
+            <a href="{% url 'My-Projects' %}" class="btn btn-success" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">
+                Cancel 
+            </a>
+        </div>
+
+
+
+    </div>
+    
+</form>
+
+
+{%else%}
+404
+{%endif%}
+
+
+{%endblock editArea%}

@@ -1,0 +1,41 @@
+{% extends "plain_msg_template.html" %}
+
+{%block plain_msg_context%}
+
+
+<div class="container" style="height: auto;  margin-bottom: 0px; padding-bottom: 0px; border: 0px solid red;">
+
+        
+    <div class="row" style="height: auto; border: 0px solid green;">
+        <div class="col" style="width: auto; border: 0px solid red;">
+            <div class="container" style="border: 0px solid; margin-top: 200px; padding-bottom: 10px;">
+                <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-size: calc(25px + 4vw);">Nice Try 😄</h1>
+            </div>
+
+            <div class="container" style="border: 0px solid;">
+                <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-size: calc(15px + 1.5vw);">
+                But I don't think programmer wanted you to access this page.
+                </h1>
+            </div>
+
+            <div class="container" style="border: 0px solid; padding: 30px 30px 30px 30px ;">
+                <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white; font-weight: bold; font-size: calc(12px + 1.5vw);">
+                Anyway, you seems lost ! Lets getchyu back on track. 😆
+                </h1>
+            </div>
+
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <a href="{%url  'Home-Landing'%}" class="btn btn-primary" style="align-items: center; border-radius: 20px; margin-left: 10px; margin-right: 10px;">Home sweet Home!</a>
+    </div>
+
+    <div class="row justify-content-center" style="margin-top:50px;">
+        <h1 style="font-family: 'Mulish', sans-serif; text-align: center; color: white;  font-size: calc(11px + 1vw);">
+            By the way, It's a 404 !
+            </h1>
+    </div>
+</div>
+
+{%endblock%}
+

@@ -1,0 +1,45 @@
+{% extends 'base_edit_area.html' %}
+
+
+{%load crispy_forms_tags%}
+
+{% block editArea %}
+
+
+{% if user.is_authenticated %}
+
+ 
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-5" style="text-align: center;">
+           {{legend}}
+        </legend>
+        {{form.media}}
+        {{form|crispy}}
+    </fieldset>
+    
+    <hr>
+
+    <div class="row justify-content-end">
+        <div class="form-group">
+            <a href='/' class="btn btn-danger" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">Cancel</a>
+
+            <button type="submit" class="btn btn-success" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">
+                Save 
+            </button>
+        </div>
+
+
+
+    </div>
+    
+</form>
+
+
+{%else%}
+404
+{%endif%}
+
+
+{%endblock editArea%}

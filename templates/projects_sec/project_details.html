@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- style="border: 1px solid;" -->
+<style>
+    body {
+        background-color: rgb(29, 28, 28);
+    }
+
+
+    .main-container {
+        /* box-shadow: 1px 5px 20px 8px #ecebeb; */
+        border-radius: 20px;
+        background-color: rgb(51, 51, 51);
+        border: 2px solid rgb(241, 229, 119);
+        color: white;
+    }
+
+</style>
+
+
+<div style="margin-top: 100px ; margin-bottom: 160px; height: auto;">
+    <div class="container main-container" style="width: auto; height: auto; padding: 30px 30px 30px 30px ;">
+    
+        {{object.project_summary | safe}}
+
+
+    </div>
+    {% if user.is_authenticated %}
+        <div class="container main-container" style="margin-top: 20px; margin-bottom: 100px; height: auto; padding: 10px 10px 10px 10px ;">
+
+            <a href = '{% url "Update-Projects-Post" object.id %}' class="btn btn-success" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">
+                Edit!
+            </a>
+
+            <a href='{% url "My-Projects" %}' class="btn btn-danger" style="border-radius: 10px; margin-left: 10px; margin-right: 10px;">Cancel</a>
+
+        </div>
+    {% endif %}
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'about_info.apps.AboutInfoConfig',
     'general_info.apps.GeneralInfoConfig',
     'skill_set.apps.SkillSetConfig',
+    'project_posts',
+
+
+    'storages',
+    'crispy_forms',
+    'ckeditor',
+    'ckeditor_uploader',
+    'django_cleanup.apps.CleanupConfig',
 
     
     'django.contrib.admin',
@@ -45,7 +53,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
+
+CKEDITOR_UPLOAD_PATH = 'CK_UPLOADS/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 1000,
+        'width': 'full',
+        'visibility':'visible'
+    },
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,12 +151,37 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # Setting bootstrap 4 as default
 
+
+# DEVLOPMENT-----------------------------------------------------------------------------------------------------------------------
+
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')     # Media files wil be uploaded here
+MEDIA_URL = '/MEDIA/'                           # This is the main folder that will contain media root folder
+
+# DEPLOYMENT------------------------------------------------------------------------------------------------------------------------
+from google.oauth2 import service_account
+
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR,'gauth/credentials/myportfolio-gc-service.json')
+)
+
+
+GS_BUCKET_NAME = os.environ.get('GC_BUCKET_NAME')
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+GS_FILE_OVERWRITE = False
+
+
+
 

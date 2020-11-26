@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<div style="padding-top: 100px;">
+    <div class="container" style="height: 350px;">
+        <h2 style="text-align: center;">-- THIS PAGE IS NOT ACCESSABLE BY UNAUTHORIZED USERS --</h2><hr style='background-color: rgb(211, 206, 206);'>
+        <div class="row justify-content-center">
+            <a href="{%url  'Home-Landing'%}" class="btn btn-primary" style="align-items: center; border-radius: 20px; margin-left: 10px; margin-right: 10px;">Home</a>
+        </div>
+        <h4 style="text-align: center; margin-top: 100px;">ACCESS DENIED!</h4>
+    </div>
+</div>
+
+{% endblock content %}
